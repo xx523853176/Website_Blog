@@ -361,7 +361,7 @@ han: false
 
 # gitalk
 gitalk:
-  enable: true
+  enable: false
   githubID: xx523853176  
   repo: "https://github.com/xx523853176/Website_Blog"
   ClientID: c2f100ae8924b15d4f7d
