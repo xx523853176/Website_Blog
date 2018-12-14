@@ -93,7 +93,7 @@ index_with_subtitle: true
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
 menu:
   home: / || home
-  #about: /about/ || user
+  about: /about/ || user
   tags: /tags/ || tags
   categories: /categories/ || th
   archives: /archives/ || archive
@@ -155,7 +155,7 @@ links_layout: block
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
 # in site  directory(source/uploads): /uploads/avatar.gif
-#avatar: /images/avatar.gif
+avatar: /images/avatar.png
 
 # Table Of Contents in the Sidebar
 toc:
@@ -359,14 +359,14 @@ han: false
 # Duoshuo ShortName
 #duoshuo_shortname:
 
-# gitalk
+# Gitalk
 gitalk:
-  enable: false
-  githubID: xx523853176  
-  repo: "https://github.com/xx523853176/Website_Blog"
-  ClientID: c2f100ae8924b15d4f7d
-  ClientSecret: 0eba0ab6a1d75ee010e34017eae305c0d1926c27
-  adminUser: xx523853176
+  enable: true
+  githubID: 'xx523853176'   
+  repo: 'https://blog.nillionaire.net/'
+  ClientID: 'c2f100ae8924b15d4f7d'
+  ClientSecret: '0eba0ab6a1d75ee010e34017eae305c0d1926c27'
+  adminUser: 'xx523853176'
   distractionFreeMode: true
 
 # Disqus
