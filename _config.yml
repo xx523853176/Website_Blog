@@ -81,3 +81,9 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type:
+
+# Laziload
+lazyload:
+  enable: true 
+  onlypost: false
+  loadingImg: /pic/loading.gif 

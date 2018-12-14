@@ -822,3 +822,9 @@ images: images
 
 # Theme version
 version: 5.1.4
+
+# Laziload
+lazyload:
+  enable: true 
+  onlypost: false
+  loadingImg: # eg /images/loading.gif 
