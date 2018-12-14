@@ -363,7 +363,7 @@ han: false
 gitalk:
   enable: true
   githubID: 'xx523853176'   
-  repo: 'https://blog.nillionaire.net/'
+  repo: 'https://github.com/xx523853176/Website_Blog'
   ClientID: 'c2f100ae8924b15d4f7d'
   ClientSecret: '0eba0ab6a1d75ee010e34017eae305c0d1926c27'
   adminUser: 'xx523853176'
