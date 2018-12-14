@@ -1,6 +1,7 @@
 ---
 title: 
 type: "about"
+comments: false
 ---
 
 <center><font size="5" color="#ABABAB" >
