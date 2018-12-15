@@ -87,3 +87,13 @@ lazyload:
   enable: true 
   onlypost: false
   loadingImg: /pic/loading.gif 
+
+# SEO
+Plugins:
+# - hexo-generator-baidu-sitemap
+- hexo-generator-sitemap
+
+# baidusitemap:
+#     path: baidusitemap.xml
+sitemap:
+    path: sitemap.xml
