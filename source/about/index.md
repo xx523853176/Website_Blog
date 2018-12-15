@@ -20,6 +20,13 @@ comments: false
 
 ---
 
+# 站点配置
+
+## CSS配置
+[CSS配置](/2018/12/10/站点CSS配置/#more)
+
+---
+
 # 博客历程
 - 2018-12-12 &nbsp;&nbsp;&nbsp;&nbsp; 基于 Hexo x NexT 、 Netlify 建站
 - 2018-12-15 &nbsp;&nbsp;&nbsp;&nbsp; 完善主题，整合gitalk、lazyload功能
