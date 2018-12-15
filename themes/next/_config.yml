@@ -366,7 +366,7 @@ gitalk:
   repo: 'Website_Blog'
   ClientID: 'c2f100ae8924b15d4f7d'
   ClientSecret: '0eba0ab6a1d75ee010e34017eae305c0d1926c27'
-  adminUser: 'xx523853176'
+  admin: 'xx523853176'
   distractionFreeMode: true
 
 # Disqus
