@@ -6,14 +6,14 @@
 title: 一个奇怪的小水池
 subtitle: 水池边有三只小猫~
 description: 猫猫居然想要跳进水池里捞小鱼？！
-keywords: 
+keywords: "猫 python CAD"
 author: Husky
 language: zh-Hans
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://blog.nillionaire.net
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
