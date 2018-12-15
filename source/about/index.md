@@ -30,4 +30,4 @@ comments: false
 # 博客历程
 - 2018-12-12 &nbsp;&nbsp;&nbsp;&nbsp; 基于 Hexo x NexT 、 Netlify 建站
 - 2018-12-15 &nbsp;&nbsp;&nbsp;&nbsp; 完善主题，开启 gitalk、lazyload、不蒜子统计功能
-- 2018-12-16 &nbsp;&nbsp;&nbsp;&nbsp; 开启 sitemap （bing）、 CNZZ 统计功能
+- 2018-12-16 &nbsp;&nbsp;&nbsp;&nbsp; 开启 sitemap （bing / baidu）、 CNZZ 统计功能

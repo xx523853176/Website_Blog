@@ -90,10 +90,10 @@ lazyload:
 
 # SEO
 Plugins:
-# - hexo-generator-baidu-sitemap
+- hexo-generator-baidu-sitemap
 - hexo-generator-sitemap
 
-# baidusitemap:
-#     path: baidusitemap.xml
+baidusitemap:
+    path: baidusitemap.xml
 sitemap:
     path: sitemap.xml
