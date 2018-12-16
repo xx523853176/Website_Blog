@@ -1,5 +1,5 @@
 ---
-title: CAD x Python 开发之坑（一)
+title: CAD x Python 开发（一）<br><br><font size=3> —— 开发思路及问题（pyautocad 无法获取 Attributes）</font>
 top: 0
 date: 2018/12/16 01:15:17
 categories:
