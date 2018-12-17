@@ -90,18 +90,18 @@
 
 
 
-<meta name="description" content="hexo-tag-echartsX（修改自 hexo-tag-echarts3）">
+<meta name="description" content="hexo-tag-echartsX（修改自 hexo-tag-echarts3） hexo-generator-searchdb 站内搜索">
 <meta name="keywords" content="备份,SEO">
 <meta property="og:type" content="article">
 <meta property="og:title" content="站点工具配置">
 <meta property="og:url" content="https://blog.nillionaire.net/2018/12/10/站点工具配置/index.html">
 <meta property="og:site_name" content="一个奇怪的小水池">
-<meta property="og:description" content="hexo-tag-echartsX（修改自 hexo-tag-echarts3）">
+<meta property="og:description" content="hexo-tag-echartsX（修改自 hexo-tag-echarts3） hexo-generator-searchdb 站内搜索">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-17T15:24:59.378Z">
+<meta property="og:updated_time" content="2018-12-17T15:37:54.576Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="站点工具配置">
-<meta name="twitter:description" content="hexo-tag-echartsX（修改自 hexo-tag-echarts3）">
+<meta name="twitter:description" content="hexo-tag-echartsX（修改自 hexo-tag-echarts3） hexo-generator-searchdb 站内搜索">
 
 
 
@@ -253,9 +253,41 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -372,7 +404,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  490 字
+                  532 字
                 </span>
               
 
@@ -411,17 +443,18 @@
       
         <ul>
 <li>hexo-tag-echartsX（修改自 hexo-tag-echarts3）</li>
+<li>hexo-generator-searchdb 站内搜索</li>
 </ul>
 <a id="more"></a> 
 <p><br></p>
-<h1 id="hexo-tag-echartsX"><a href="#hexo-tag-echartsX" class="headerlink" title="hexo-tag-echartsX"></a>hexo-tag-echartsX</h1><h2 id="node-modules-hexo-tag-echartsX-index-js"><a href="#node-modules-hexo-tag-echartsX-index-js" class="headerlink" title="\node_modules\hexo-tag-echartsX\index.js"></a>\node_modules\hexo-tag-echartsX\index.js</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</span><br><span class="line"><span class="keyword">var</span> _ = <span class="built_in">require</span>(<span class="string">'./lib/underscore-min'</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">var</span>  path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">var</span>  _ = <span class="built_in">require</span>(<span class="string">'./lib/underscore-min'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> filePath = path.join(__dirname, <span class="string">'template.html'</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">echartsLoad</span>(<span class="params">args, content</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> template = fs.readFileSync(filePath).toString();</span><br><span class="line">    <span class="keyword">var</span> options = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (content.length) &#123;</span><br><span class="line">        <span class="keyword">var</span> options = content;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> ver = <span class="string">'https://cdn.bootcss.com/echarts/'</span> + args[<span class="number">2</span>] + <span class="string">'/echarts.min.js'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> _.template(template)(&#123;</span><br><span class="line">        id: <span class="string">'echarts'</span> + ((<span class="built_in">Math</span>.random() * <span class="number">9999</span>) | <span class="number">0</span>),</span><br><span class="line">        option: options,</span><br><span class="line">        height: args[<span class="number">0</span>] || <span class="number">400</span>,</span><br><span class="line">        width: args[<span class="number">1</span>] || <span class="string">'85%'</span>,</span><br><span class="line">        version: ver,</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">hexo.extend.tag.register(<span class="string">'echarts'</span>, echartsLoad, &#123;</span><br><span class="line">    <span class="keyword">async</span>: <span class="literal">true</span>,</span><br><span class="line">    ends: <span class="literal">true</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="node-modules-hexo-tag-echartsX-template-html"><a href="#node-modules-hexo-tag-echartsX-template-html" class="headerlink" title="\node_modules\hexo-tag-echartsX\template.html"></a>\node_modules\hexo-tag-echartsX\template.html</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"&lt;%- id %&gt;"</span> <span class="attr">style</span>=<span class="string">"width: &lt;%- width %&gt;;height: &lt;%- height %&gt;px;margin: 0 auto"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"&lt;%- version %&gt;"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="comment">// 基于准备好的dom，初始化echarts实例</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> myChart = echarts.init(<span class="built_in">document</span>.getElementById(<span class="string">'&lt;%- id %&gt;'</span>));</span></span><br><span class="line"><span class="javascript">        <span class="comment">// 指定图表的配置项和数据</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> option = <span class="xml"><span class="tag">&lt;<span class="name">%=</span> <span class="attr">option</span> %&gt;</span></span></span></span><br><span class="line"><span class="javascript">        <span class="comment">// 使用刚指定的配置项和数据显示图表。</span></span></span><br><span class="line"><span class="undefined">        myChart.setOption(option);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="echarts-示例"><a href="#echarts-示例" class="headerlink" title="echarts 示例"></a>echarts 示例</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% echarts 400 '85%' '4.2.0-rc.2' %&#125;</span><br><span class="line">... echart 对应 option ... 指定图表的配置项和数据</span><br><span class="line">&#123;% endecharts %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="echarts-示例效果"><a href="#echarts-示例效果" class="headerlink" title="echarts 示例效果"></a>echarts 示例效果</h2><div id="echarts1075" style="width: 85%;height: 400px;margin: 0 auto"></div>
+<h1 id="hexo-tag-echartsX"><a href="#hexo-tag-echartsX" class="headerlink" title="hexo-tag-echartsX"></a>hexo-tag-echartsX</h1><h2 id="node-modules-hexo-tag-echarts-index-js"><a href="#node-modules-hexo-tag-echarts-index-js" class="headerlink" title="\node_modules\hexo-tag-echarts\index.js"></a>\node_modules\hexo-tag-echarts\index.js</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</span><br><span class="line"><span class="keyword">var</span> _ = <span class="built_in">require</span>(<span class="string">'./lib/underscore-min'</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">var</span>  path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">var</span>  _ = <span class="built_in">require</span>(<span class="string">'./lib/underscore-min'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> filePath = path.join(__dirname, <span class="string">'template.html'</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">echartsLoad</span>(<span class="params">args, content</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> template = fs.readFileSync(filePath).toString();</span><br><span class="line">    <span class="keyword">var</span> options = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (content.length) &#123;</span><br><span class="line">        <span class="keyword">var</span> options = content;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> ver = <span class="string">'https://cdn.bootcss.com/echarts/'</span> + args[<span class="number">2</span>] + <span class="string">'/echarts.min.js'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> _.template(template)(&#123;</span><br><span class="line">        id: <span class="string">'echarts'</span> + ((<span class="built_in">Math</span>.random() * <span class="number">9999</span>) | <span class="number">0</span>),</span><br><span class="line">        option: options,</span><br><span class="line">        height: args[<span class="number">0</span>] || <span class="number">400</span>,</span><br><span class="line">        width: args[<span class="number">1</span>] || <span class="string">'95%'</span>,</span><br><span class="line">        version: ver,</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">hexo.extend.tag.register(<span class="string">'echarts'</span>, echartsLoad, &#123;</span><br><span class="line">    <span class="keyword">async</span>: <span class="literal">true</span>,</span><br><span class="line">    ends: <span class="literal">true</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="node-modules-hexo-tag-echarts-template-html"><a href="#node-modules-hexo-tag-echarts-template-html" class="headerlink" title="\node_modules\hexo-tag-echarts\template.html"></a>\node_modules\hexo-tag-echarts\template.html</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"&lt;%- id %&gt;"</span> <span class="attr">style</span>=<span class="string">"width: &lt;%- width %&gt;;height: &lt;%- height %&gt;px;margin: 0 auto"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"&lt;%- version %&gt;"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="comment">// 基于准备好的dom，初始化echarts实例</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> myChart = echarts.init(<span class="built_in">document</span>.getElementById(<span class="string">'&lt;%- id %&gt;'</span>));</span></span><br><span class="line"><span class="javascript">        <span class="comment">// 指定图表的配置项和数据</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> option = <span class="xml"><span class="tag">&lt;<span class="name">%=</span> <span class="attr">option</span> %&gt;</span></span></span></span><br><span class="line"><span class="javascript">        <span class="comment">// 使用刚指定的配置项和数据显示图表。</span></span></span><br><span class="line"><span class="undefined">        myChart.setOption(option);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="echarts-示例"><a href="#echarts-示例" class="headerlink" title="echarts 示例"></a>echarts 示例</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% echarts 400 '95%' '4.2.0-rc.2' %&#125;</span><br><span class="line">... echart 对应 option ... 指定图表的配置项和数据</span><br><span class="line">&#123;% endecharts %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="echarts-示例效果"><a href="#echarts-示例效果" class="headerlink" title="echarts 示例效果"></a>echarts 示例效果</h2><div id="echarts8869" style="width: 85%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/4.2.0-rc.2/echarts.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts1075'));
+        var myChart = echarts.init(document.getElementById('echarts8869'));
         // 指定图表的配置项和数据
         var option = {
     tooltip : {
@@ -501,6 +534,9 @@
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
 </script>
+<p><br></p>
+<h1 id="hexo-generator-searchdb"><a href="#hexo-generator-searchdb" class="headerlink" title="hexo-generator-searchdb"></a>hexo-generator-searchdb</h1><h2 id="站点配置文件"><a href="#站点配置文件" class="headerlink" title="站点配置文件"></a>站点配置文件</h2><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#hexo-generator-searchdb</span></span><br><span class="line"><span class="attr">search:</span></span><br><span class="line"><span class="attr">  path:</span> <span class="string">search.xml</span></span><br><span class="line"><span class="attr">  field:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">  format:</span> <span class="string">html</span></span><br><span class="line"><span class="attr">  limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+<h2 id="主题配置文件（next直接打开）"><a href="#主题配置文件（next直接打开）" class="headerlink" title="主题配置文件（next直接打开）"></a>主题配置文件（next直接打开）</h2><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -687,7 +723,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo-tag-echartsX"><span class="nav-number">1.</span> <span class="nav-text">hexo-tag-echartsX</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#node-modules-hexo-tag-echartsX-index-js"><span class="nav-number">1.1.</span> <span class="nav-text">\node_modules\hexo-tag-echartsX\index.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#node-modules-hexo-tag-echartsX-template-html"><span class="nav-number">1.2.</span> <span class="nav-text">\node_modules\hexo-tag-echartsX\template.html</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#echarts-示例"><span class="nav-number">1.3.</span> <span class="nav-text">echarts 示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#echarts-示例效果"><span class="nav-number">1.4.</span> <span class="nav-text">echarts 示例效果</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo-tag-echartsX"><span class="nav-number">1.</span> <span class="nav-text">hexo-tag-echartsX</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#node-modules-hexo-tag-echarts-index-js"><span class="nav-number">1.1.</span> <span class="nav-text">\node_modules\hexo-tag-echarts\index.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#node-modules-hexo-tag-echarts-template-html"><span class="nav-number">1.2.</span> <span class="nav-text">\node_modules\hexo-tag-echarts\template.html</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#echarts-示例"><span class="nav-number">1.3.</span> <span class="nav-text">echarts 示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#echarts-示例效果"><span class="nav-number">1.4.</span> <span class="nav-text">echarts 示例效果</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo-generator-searchdb"><span class="nav-number">2.</span> <span class="nav-text">hexo-generator-searchdb</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#站点配置文件"><span class="nav-number">2.1.</span> <span class="nav-text">站点配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题配置文件（next直接打开）"><span class="nav-number">2.2.</span> <span class="nav-text">主题配置文件（next直接打开）</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -921,6 +957,323 @@
 
 
   
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
 
 
 

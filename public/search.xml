@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[CAD x Python 开发（一） —— 开发思路及问题（pyautocad 无法获取 Attributes）]]></title>
+    <url>%2F2018%2F12%2F16%2FCAD%20x%20Python%20%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%80%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[目前因工作相关，在做一些 CAD 的二次开发，这里刚好记录一下中间遇到的坑。 CAD 开发工具目前采用 Python 对接 CAD 的 ActiveX Automation 接口，需求包为 pyautocad，该包需适当扩展方可完成设计需求。 CAD 整理CAD 软件现状及接口调整目前无论 天正 CAD 这类基于AutoCAD做出的二次开发，还是 中望 CAD 这类所谓的完全自主研发，经测试只是主接口名称改变，一般只需参考该软件文档修改 AutoCAD.Application 为对应接口名称即可。 CAD 开发语言分析目前已测试过 AutoLisp、 VLisp 语言以及 ActiveX Automation 开发方式。 AutoLisp 的功能局限性较大，略复杂的属性调用便无法实现。只可用于极为基础的功能辅助。 VLisp 可看作 AutoLisp 的扩展，能够与 CAD 内的各类对象有完整的接口，能够满足各类开发的需要。但因调用函数的组合复杂性，入门阶段学习曲线十分陡峭。 ActiveX Automation 技术将 CAD 的各类对象数据直接以接口的形式对外开放，采用一套完善的基于 COM（组件对象模型）的标准。通过该接口的调用，可以便捷地使用各类语言（官方推荐： VB、 C# ，个人使用 Python，C、 C++ 自然支持，很多语言均有接口调用方法 ）进行开发。同时由于各类 CAD 接口方法的统一性，也无需担心开发兼容性问题。接口使用方法在 CAD 自带的帮助文档中即有详细介绍，学习曲线平缓。 CAD 开发中踩过的坑pyautocad 包 无法获取 Attributespyautocad 包采用 comtypes 连接，在对对象进行 object.GetAttributes() 时，会出现以下错误（ comtypes/issues/63 中提及 ）： 123456...\lib\site-packages\comtypes\automation.pyc in _get_value(self, dynamic) 391 return value 392 elif self.vt &amp; VT_ARRAY:--&gt; 393 typ = _vartype_to_ctype[self.vt &amp; ~VT_ARRAY] 394 return cast(self._.pparray, _midlSAFEARRAY(typ)).unpack() 395 else: 据此，可引入 win32com 包，另作一个 CAD 接口，将 pyautocad 中 api.py 内的以下方法 1self._app = comtypes.client.GetActiveObject('AutoCAD.Application', dynamic=True) 修改为 1self._app = win32com.client.Dispatch("AutoCAD.Application") 即可调用。 comtypes (pyautocad) 和 win32com 接口需同时使用数据传输的便捷win32com 包可能在传输数据时与 comtypes 不太一致，如 pyautocad 采用的 aDouble 、 aInt 、 aShort 方法在 comtypes 接口时可传输，但在 win32com 接口时会产生错误。该方法实际效果如下： 1array.array("d", list) 两个接口各自的便利comtypes 具有 comtypes.client.GetBestInterface(obj) 方法，对应 pyautocad 中 api.py 内的 best_interface(self, obj) 方法。可快速检索接口。 win32com 可采用 help() 查看参数需求。 目前测试中两者不易互相取代。 综上所述，建议在开发时同时调用 comtypes 方法和 win32com 方法。对 CAD 操作时除获取 Attributes 时采用 win32com 包外，其他时候均采用 pyautocad 自带 comtypes 包即可。]]></content>
+      <categories>
+        <category>Program</category>
+      </categories>
+      <tags>
+        <tag>CAD</tag>
+        <tag>ActiveX Automation</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[哈士奇（一）]]></title>
+    <url>%2F2018%2F12%2F15%2F%E5%93%88%E5%A3%AB%E5%A5%87%EF%BC%88%E4%B8%80%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[哈士奇是一只 小小的 橘猫，似乎忘了最开始是怎么定下这个名字的，但一定是经过了深思熟虑的。 时至今日，可爱的小哈已经四岁半多了，作为橘猫，真的不算特别胖，万分欣慰！ 可惜从这名字看来，他也只是有点儿像狗子，更多的还是像一只烤鸭，或者一只鸡腿…… 然后还被起了一大堆的名字，比如 小可爱 、 二哈 、 猪猪 、辣鸡 ……当然还有大堆的，防止被死神带走所以起来的超级多的名字~ 以下，多图预警 (๑•́ ₃ •̀๑) 哈士奇的正面照 特别耀眼的烤鸡 绝望的哈士奇 一个小宇宙 完美的又是jiojio结尾]]></content>
+      <categories>
+        <category>Husky</category>
+      </categories>
+      <tags>
+        <tag>照片</tag>
+        <tag>哈士奇</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[开始]]></title>
+    <url>%2F2018%2F12%2F14%2F%E5%BC%80%E5%A7%8B%2F</url>
+    <content type="text"><![CDATA[大约很久没有动过笔了，不知缘何，大约心念一动，便申下了一个域名，弄出了一个站点。先记录一下，建站日期是2018.12.12，看起来很好的感觉~然后，便不知要做点什么了…… 说来，Nillionaire，君君给的一个词语，有一字之差之趣，但我大概也只能看出这点意味。 其实最初萌生做网站想法的时候，是想从一个什么都没有的空白页面开始，也许再有一个服务器，用之前入了下门的PHP，再有一点各式各样的组合。后来却神不知鬼不觉入了这个简单的Hexo坑。不过要相信，一定还会有一个从零开始的site的~ 先造一个写写东西的地方吧。总要一只脚简单地跨进门再说……记录的地方，谁知道能记录到些什么奇怪的东西呢~~~ 嗷！ 就希望一下这是个美好的开始吧~ 美好的结束嘛，那这里就是哈士奇的小JioJio啦！ 哈士奇的JioJio]]></content>
+      <categories>
+        <category>Express</category>
+      </categories>
+      <tags>
+        <tag>哈士奇</tag>
+        <tag>随感</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[站点CSS配置]]></title>
+    <url>%2F2018%2F12%2F10%2F%E7%AB%99%E7%82%B9CSS%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[站点CSS配置 /css/_custom/custom.styl : 12345678910111213141516171819202122232425262728293031323334353637383940414243// Custom styles.// 主背景.container &#123; background-image: linear-gradient(120deg, #adc 0%, #cad 100%);&#125;// brand变色 -&gt; \css\_schemes\Pisces\_brand.styl.site-meta &#123; background: #3f3f3f;&#125;// 菜单栏修改 -&gt; \css\_schemes\Pisces\_layout.styl.header-inner &#123; background: transparent;&#125;// 菜单栏下拉菜单 -&gt; \css\_schemes\Pisces\_menu.styl.menu .menu-item &#123; a &#123; &amp;:hover &#123; background: #eeeeff; border-bottom-color: #bbbbcc; &#125; &#125;&#125;.menu-item-active a &#123; background: #eeeeff; &#125;// 侧边栏透明 -&gt; \css\_schemes\Pisces\_sidebar.styl.sidebar &#123; background: transparent; .sidebar-inner &#123; background: transparent; &#125;&#125;// 文章部分取消白底 -&gt; \css\_schemes\Pisces\ _layout.content-wrap &#123; background: transparent; min-height: 800px;&#125;// 按钮变色 -&gt; ?.btn &#123; background: transparent;&#125;]]></content>
+      <categories>
+        <category>站点</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>备份</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[站点工具配置]]></title>
+    <url>%2F2018%2F12%2F10%2F%E7%AB%99%E7%82%B9%E5%B7%A5%E5%85%B7%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[hexo-tag-echartsX（修改自 hexo-tag-echarts3） hexo-generator-searchdb 站内搜索 hexo-tag-echartsX\node_modules\hexo-tag-echarts\index.js1234567891011121314151617181920212223242526272829303132333435363738'use strict';var fs = require('fs');var path = require("path");var _ = require('./lib/underscore-min');'use strict';var fs = require('fs');var path = require('path');var _ = require('./lib/underscore-min');var filePath = path.join(__dirname, 'template.html');function echartsLoad(args, content) &#123; var template = fs.readFileSync(filePath).toString(); var options = &#123;&#125;; if (content.length) &#123; var options = content; &#125; var ver = 'https://cdn.bootcss.com/echarts/' + args[2] + '/echarts.min.js'; return _.template(template)(&#123; id: 'echarts' + ((Math.random() * 9999) | 0), option: options, height: args[0] || 400, width: args[1] || '95%', version: ver, &#125;);&#125;hexo.extend.tag.register('echarts', echartsLoad, &#123; async: true, ends: true&#125;); \node_modules\hexo-tag-echarts\template.html12345678910&lt;div id="&lt;%- id %&gt;" style="width: &lt;%- width %&gt;;height: &lt;%- height %&gt;px;margin: 0 auto"&gt;&lt;/div&gt;&lt;script src="&lt;%- version %&gt;"&gt;&lt;/script&gt;&lt;script type="text/javascript"&gt; // 基于准备好的dom，初始化echarts实例 var myChart = echarts.init(document.getElementById('&lt;%- id %&gt;')); // 指定图表的配置项和数据 var option = &lt;%= option %&gt; // 使用刚指定的配置项和数据显示图表。 myChart.setOption(option);&lt;/script&gt; echarts 示例123&#123;% echarts 400 '95%' '4.2.0-rc.2' %&#125;... echart 对应 option ... 指定图表的配置项和数据&#123;% endecharts %&#125; echarts 示例效果 // 基于准备好的dom，初始化echarts实例 var myChart = echarts.init(document.getElementById('echarts8869')); // 指定图表的配置项和数据 var option = { tooltip : { trigger: 'axis', axisPointer: { type: 'cross', label: { backgroundColor: '#6a7985' } } }, legend: { data:['邮件营销','联盟广告','视频广告','直接访问','搜索引擎'] }, grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true }, xAxis : [ { type : 'category', boundaryGap : false, data : ['周一','周二','周三','周四','周五','周六','周日'] } ], yAxis : [ { type : 'value' } ], series : [ { name:'邮件营销', type:'line', stack: '总量', areaStyle: {}, data:[120, 132, 101, 134, 90, 230, 210] }, { name:'联盟广告', type:'line', stack: '总量', areaStyle: {}, data:[220, 182, 191, 234, 290, 330, 310] }, { name:'视频广告', type:'line', stack: '总量', areaStyle: {}, data:[150, 232, 201, 154, 190, 330, 410] }, { name:'直接访问', type:'line', stack: '总量', areaStyle: {normal: {}}, data:[320, 332, 301, 334, 390, 330, 320] }, { name:'搜索引擎', type:'line', stack: '总量', label: { normal: { show: true, position: 'top' } }, areaStyle: {normal: {}}, data:[820, 932, 901, 934, 1290, 1330, 1320] } ] }; // 使用刚指定的配置项和数据显示图表。 myChart.setOption(option); hexo-generator-searchdb站点配置文件123456#hexo-generator-searchdbsearch: path: search.xml field: post format: html limit: 10000 主题配置文件（next直接打开）12local_search: enable: true]]></content>
+      <categories>
+        <category>站点</category>
+      </categories>
+      <tags>
+        <tag>备份</tag>
+        <tag>SEO</tag>
+      </tags>
+  </entry>
+</search>
