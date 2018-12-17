@@ -16,7 +16,7 @@
       <span class="post-meta-item-text">{{ __('post.totalcount') }}&#58;</span>
     {% endif %}
     <span title="{{ __('post.totalcount') }}">{#
-    #}{{ totalcount(site, '0,0.0a') }}{#
+    #}{{ totalcount(site, '0,0.0a') }} words{#
   #}</span>
   {% endif %}
 </div>

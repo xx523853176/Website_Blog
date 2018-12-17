@@ -1,0 +1,2 @@
+# Redirect default Netlify subdomain to primary domain
+https://blog-husky.netlify.com/* https://blog.nillionaire.net/:splat 301!
