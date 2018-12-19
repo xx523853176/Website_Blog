@@ -45,7 +45,7 @@ tags:
 
 pyautocad 包采用 comtypes 连接，在对对象进行 `object.GetAttributes()` 时，会出现以下错误（ [comtypes/issues/63](https://github.com/enthought/comtypes/issues/63) 中提及 ）：
 
-```
+```python
 ...\lib\site-packages\comtypes\automation.pyc in _get_value(self, dynamic)
     391             return value
     392         elif self.vt & VT_ARRAY:

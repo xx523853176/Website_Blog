@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="CSS,备份,">
+  <meta name="keywords" content="备份,CSS,">
 
 
 
@@ -91,14 +91,14 @@
 
 
 <meta name="description" content="站点CSS配置">
-<meta name="keywords" content="CSS,备份">
+<meta name="keywords" content="备份,CSS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="站点CSS配置">
 <meta property="og:url" content="https://blog.nillionaire.net/2018/12/10/站点CSS配置/index.html">
 <meta property="og:site_name" content="一个奇怪的小水池">
 <meta property="og:description" content="站点CSS配置">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-17T14:41:22.080Z">
+<meta property="og:updated_time" content="2018-12-19T16:51:25.983Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="站点CSS配置">
 <meta name="twitter:description" content="站点CSS配置">
@@ -111,7 +111,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -238,16 +238,6 @@
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-sitemap">
-          <a href="/sitemap.xml" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
-            
-            站点地图
           </a>
         </li>
       
@@ -404,7 +394,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  152 字
+                  207 字
                 </span>
               
 
@@ -445,8 +435,8 @@
 <p>站点CSS配置</p>
 </blockquote>
 <a id="more"></a> 
-<p>/css/_custom/custom.styl :</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">// Custom styles.</span><br><span class="line"></span><br><span class="line">// 主背景</span><br><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(120deg, #adc 0%, #cad 100%);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// brand变色 -&gt; \css\_schemes\Pisces\_brand.styl</span><br><span class="line"><span class="selector-class">.site-meta</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#3f3f3f</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 菜单栏修改 -&gt; \css\_schemes\Pisces\_layout.styl</span><br><span class="line"><span class="selector-class">.header-inner</span> &#123;</span><br><span class="line">   <span class="attribute">background</span>: transparent;</span><br><span class="line">&#125;</span><br><span class="line">// 菜单栏下拉菜单 -&gt; \css\_schemes\Pisces\_menu.styl</span><br><span class="line"><span class="selector-class">.menu</span> <span class="selector-class">.menu-item</span> &#123;</span><br><span class="line">  a &#123;</span><br><span class="line">    &amp;<span class="selector-pseudo">:hover</span> &#123; </span><br><span class="line">      <span class="attribute">background</span>: <span class="number">#eeeeff</span>;</span><br><span class="line">      <span class="attribute">border-bottom-color</span>: <span class="number">#bbbbcc</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.menu-item-active</span> <span class="selector-tag">a</span> &#123; <span class="attribute">background</span>: <span class="number">#eeeeff</span>; &#125;</span><br><span class="line"></span><br><span class="line">// 侧边栏透明 -&gt; \css\_schemes\Pisces\_sidebar.styl</span><br><span class="line"><span class="selector-class">.sidebar</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: transparent;</span><br><span class="line">  .sidebar-inner &#123; background: transparent; &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 文章部分取消白底 -&gt; \css\_schemes\Pisces\ _layout</span><br><span class="line"><span class="selector-class">.content-wrap</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: transparent;</span><br><span class="line">    <span class="attribute">min-height</span>: <span class="number">800px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 按钮变色 -&gt; ?</span><br><span class="line"><span class="selector-class">.btn</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: transparent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><figcaption><span>\css\_custom\custom.styl</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">// Custom styles.</span><br><span class="line"></span><br><span class="line">// 主背景</span><br><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(120deg, #adc 0%, #cad 100%);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// brand变色 -&gt; \css\_schemes\Pisces\_brand.styl</span><br><span class="line"><span class="selector-class">.site-meta</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#3f3f3f</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 菜单栏修改 -&gt; \css\_schemes\Pisces\_layout.styl</span><br><span class="line"><span class="selector-class">.header-inner</span> &#123;</span><br><span class="line">   <span class="attribute">background</span>: transparent;</span><br><span class="line">&#125;</span><br><span class="line">// 菜单栏下拉菜单 -&gt; \css\_schemes\Pisces\_menu.styl</span><br><span class="line"><span class="selector-class">.menu</span> <span class="selector-class">.menu-item</span> &#123;</span><br><span class="line">  a &#123;</span><br><span class="line">    &amp;<span class="selector-pseudo">:hover</span> &#123; </span><br><span class="line">      <span class="attribute">background</span>: <span class="number">#eeeeff</span>;</span><br><span class="line">      <span class="attribute">border-bottom-color</span>: <span class="number">#bbbbcc</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.menu-item-active</span> <span class="selector-tag">a</span> &#123; <span class="attribute">background</span>: <span class="number">#eeeeff</span>; &#125;</span><br><span class="line"></span><br><span class="line">// 侧边栏透明 -&gt; \css\_schemes\Pisces\_sidebar.styl</span><br><span class="line"><span class="selector-class">.sidebar</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: transparent;</span><br><span class="line">  .sidebar-inner &#123; background: transparent; &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 文章部分取消白底 -&gt; \css\_schemes\Pisces\ _layout.styl</span><br><span class="line"><span class="selector-class">.content-wrap</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: transparent;</span><br><span class="line">    <span class="attribute">min-height</span>: <span class="number">800px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 按钮变色 -&gt; ?</span><br><span class="line"><span class="selector-class">.btn</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: transparent;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//codeblock设置 -&gt; \css\_common\components\highlight\highlight.styl</span><br><span class="line"><span class="selector-class">.highlight</span> &#123;</span><br><span class="line">  figcaption &#123;</span><br><span class="line">    <span class="selector-tag">margin-top</span>: 0<span class="selector-class">.5em</span>;</span><br><span class="line">    <span class="selector-tag">margin-bottom</span>: 0<span class="selector-class">.5em</span>;</span><br><span class="line">    <span class="selector-tag">margin-left</span>: 1<span class="selector-tag">em</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-tag">a</span> &#123; <span class="attribute">margin-right</span>: <span class="number">1em</span>; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><figcaption><span>\css\_variables\custom.styl</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// Custom variables.</span><br><span class="line"></span><br><span class="line">$table-cell-padding             = 5px</span><br><span class="line">$table-row-odd-bg-color         = #9BD</span><br><span class="line">$table-row-hover-bg-color       = #DBB</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -463,9 +453,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CSS/" rel="tag"><i class="fa fa-tag"></i> CSS</a>
-          
             <a href="/tags/备份/" rel="tag"><i class="fa fa-tag"></i> 备份</a>
+          
+            <a href="/tags/CSS/" rel="tag"><i class="fa fa-tag"></i> CSS</a>
           
         </div>
       
@@ -478,18 +468,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/10/站点工具配置/" rel="next" title="站点工具配置">
-                <i class="fa fa-chevron-left"></i> 站点工具配置
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/12/14/开始/" rel="prev" title="开始">
-                开始 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/12/10/站点工具配置/" rel="prev" title="站点工具配置">
+                站点工具配置 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -540,6 +526,8 @@
 
   <aside id="sidebar" class="sidebar">
     
+      <div id="sidebar-dimmer"></div>
+    
     <div class="sidebar-inner">
 
       
@@ -563,7 +551,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -574,7 +562,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -585,7 +573,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -646,7 +634,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">1.9k words</span>
+    <span title="Site words total count">2.6k words</span>
   
 </div>
 
@@ -695,6 +683,8 @@
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     
