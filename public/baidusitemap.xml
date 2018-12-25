@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://blog.nillionaire.net/2018/12/20/%E6%97%85%E8%A1%8C%E8%AE%A1%E5%88%92%E2%80%94%E2%80%94%E6%B3%B0%E5%9B%BD/</loc>
-    <lastmod>2018-12-19T17:45:01.626Z</lastmod>
+    <loc>https://blog.nillionaire.net/2018/12/26/%E6%97%85%E8%A1%8C%E8%AE%A1%E5%88%92%E2%80%94%E2%80%94%E6%B3%B0%E5%9B%BD/</loc>
+    <lastmod>2018-12-25T17:04:28.942Z</lastmod>
+  </url>  <url>
+    <loc>https://blog.nillionaire.net/2018/12/15/%E5%93%88%E5%A3%AB%E5%A5%87%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
+    <lastmod>2018-12-25T17:04:18.389Z</lastmod>
   </url>  <url>
     <loc>https://blog.nillionaire.net/2018/12/10/%E7%AB%99%E7%82%B9%E5%B7%A5%E5%85%B7%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2018-12-19T17:21:40.863Z</lastmod>
@@ -15,8 +18,5 @@
   </url>  <url>
     <loc>https://blog.nillionaire.net/2018/12/14/%E5%BC%80%E5%A7%8B/</loc>
     <lastmod>2018-12-17T14:46:43.758Z</lastmod>
-  </url>  <url>
-    <loc>https://blog.nillionaire.net/2018/12/15/%E5%93%88%E5%A3%AB%E5%A5%87%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
-    <lastmod>2018-12-17T14:46:32.667Z</lastmod>
   </url>
 </urlset>
