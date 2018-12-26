@@ -433,10 +433,10 @@
       
         <p>目前因工作相关，在做一些 CAD 的二次开发，这里刚好记录一下中间遇到的坑。</p>
 <hr>
-<h1 id="CAD-开发工具"><a href="#CAD-开发工具" class="headerlink" title="CAD 开发工具"></a>CAD 开发工具</h1><p>目前采用 Python 对接 CAD 的 ActiveX Automation 接口，需求包为 pyautocad，该包需适当扩展方可完成设计需求。<br><a id="more"></a></p>
+<h1><a href="#cad-kai-fa-gong-ju" class="header-anchor"> <i class="fa fa-file-text-o"></i> </a><span id="cad-kai-fa-gong-ju">CAD 开发工具</span></h1><p>目前采用 Python 对接 CAD 的 ActiveX Automation 接口，需求包为 pyautocad，该包需适当扩展方可完成设计需求。<br><a id="more"></a></p>
 <hr>
-<h1 id="CAD-整理"><a href="#CAD-整理" class="headerlink" title="CAD 整理"></a>CAD 整理</h1><h2 id="CAD-软件现状及接口调整"><a href="#CAD-软件现状及接口调整" class="headerlink" title="CAD 软件现状及接口调整"></a>CAD 软件现状及接口调整</h2><p>目前无论 <code>天正 CAD</code> 这类基于AutoCAD做出的二次开发，还是 <code>中望 CAD</code> 这类所谓的完全自主研发，经测试只是主接口名称改变，一般只需参考该软件文档修改 <code>AutoCAD.Application</code> 为对应接口名称即可。</p>
-<h2 id="CAD-开发语言分析"><a href="#CAD-开发语言分析" class="headerlink" title="CAD 开发语言分析"></a>CAD 开发语言分析</h2><p>目前已测试过 AutoLisp、 VLisp 语言以及 ActiveX Automation 开发方式。</p>
+<h1><a href="#cad-zheng-li" class="header-anchor"> <i class="fa fa-file-text-o"></i> </a><span id="cad-zheng-li">CAD 整理</span></h1><h2><a href="#cad-ruan-jian-xian-zhuang-ji-jie-kou-diao-zheng" class="header-anchor"> <i class="fa fa-file-text-o"></i> </a><span id="cad-ruan-jian-xian-zhuang-ji-jie-kou-diao-zheng">CAD 软件现状及接口调整</span></h2><p>目前无论 <code>天正 CAD</code> 这类基于AutoCAD做出的二次开发，还是 <code>中望 CAD</code> 这类所谓的完全自主研发，经测试只是主接口名称改变，一般只需参考该软件文档修改 <code>AutoCAD.Application</code> 为对应接口名称即可。</p>
+<h2><a href="#cad-kai-fa-yu-yan-fen-xi" class="header-anchor"> <i class="fa fa-file-text-o"></i> </a><span id="cad-kai-fa-yu-yan-fen-xi">CAD 开发语言分析</span></h2><p>目前已测试过 AutoLisp、 VLisp 语言以及 ActiveX Automation 开发方式。</p>
 <ul>
 <li><p>AutoLisp 的功能局限性较大，略复杂的属性调用便无法实现。只可用于极为基础的功能辅助。</p>
 </li>
@@ -446,16 +446,16 @@
 </li>
 </ul>
 <hr>
-<h1 id="CAD-开发中踩过的坑"><a href="#CAD-开发中踩过的坑" class="headerlink" title="CAD 开发中踩过的坑"></a>CAD 开发中踩过的坑</h1><h2 id="pyautocad-包-无法获取-Attributes"><a href="#pyautocad-包-无法获取-Attributes" class="headerlink" title="pyautocad 包 无法获取 Attributes"></a>pyautocad 包 无法获取 Attributes</h2><p>pyautocad 包采用 comtypes 连接，在对对象进行 <code>object.GetAttributes()</code> 时，会出现以下错误（ <a href="https://github.com/enthought/comtypes/issues/63" target="_blank" rel="noopener">comtypes/issues/63</a> 中提及 ）：</p>
+<h1><a href="#cad-kai-fa-zhong-cai-guo-de-keng" class="header-anchor"> <i class="fa fa-file-text-o"></i> </a><span id="cad-kai-fa-zhong-cai-guo-de-keng">CAD 开发中踩过的坑</span></h1><h2><a href="#pyautocad-bao-wu-fa-huo-qu-attributes" class="header-anchor"> <i class="fa fa-file-text-o"></i> </a><span id="pyautocad-bao-wu-fa-huo-qu-attributes">pyautocad 包 无法获取 Attributes</span></h2><p>pyautocad 包采用 comtypes 连接，在对对象进行 <code>object.GetAttributes()</code> 时，会出现以下错误（ <a href="https://github.com/enthought/comtypes/issues/63" target="_blank" rel="noopener">comtypes/issues/63</a> 中提及 ）：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">...\lib\site-packages\comtypes\automation.pyc <span class="keyword">in</span> _get_value(self, dynamic)</span><br><span class="line">    <span class="number">391</span>             <span class="keyword">return</span> value</span><br><span class="line">    <span class="number">392</span>         <span class="keyword">elif</span> self.vt &amp; VT_ARRAY:</span><br><span class="line">--&gt; 393             typ = _vartype_to_ctype[self.vt &amp; ~VT_ARRAY]</span><br><span class="line">    <span class="number">394</span>             <span class="keyword">return</span> cast(self._.pparray, _midlSAFEARRAY(typ)).unpack()</span><br><span class="line">    <span class="number">395</span>         <span class="keyword">else</span>:</span><br></pre></td></tr></table></figure>
 <p>据此，可引入 win32com 包，另作一个 CAD 接口，将 pyautocad 中 api.py 内的以下方法</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">self._app = comtypes.client.GetActiveObject(<span class="string">'AutoCAD.Application'</span>, dynamic=<span class="keyword">True</span>)</span><br></pre></td></tr></table></figure>
 <p>修改为</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">self._app = win32com.client.Dispatch(<span class="string">"AutoCAD.Application"</span>)</span><br></pre></td></tr></table></figure>
 <p>即可调用。</p>
-<h2 id="comtypes-pyautocad-和-win32com-接口需同时使用"><a href="#comtypes-pyautocad-和-win32com-接口需同时使用" class="headerlink" title="comtypes (pyautocad) 和 win32com 接口需同时使用"></a>comtypes (pyautocad) 和 win32com 接口需同时使用</h2><h3 id="数据传输的便捷"><a href="#数据传输的便捷" class="headerlink" title="数据传输的便捷"></a>数据传输的便捷</h3><p>win32com 包可能在传输数据时与 comtypes 不太一致，如 pyautocad 采用的 <code>aDouble</code> 、 <code>aInt</code> 、 <code>aShort</code> 方法在 comtypes 接口时可传输，但在 win32com 接口时会产生错误。该方法实际效果如下：</p>
+<h2><a href="#comtypes-pyautocad-he-win32com-jie-kou-xu-tong-shi-shi-yong" class="header-anchor"> <i class="fa fa-file-text-o"></i> </a><span id="comtypes-pyautocad-he-win32com-jie-kou-xu-tong-shi-shi-yong">comtypes (pyautocad) 和 win32com 接口需同时使用</span></h2><h3><a href="#shu-ju-chuan-shu-de-bian-jie" class="header-anchor"> <i class="fa fa-file-text-o"></i> </a><span id="shu-ju-chuan-shu-de-bian-jie">数据传输的便捷</span></h3><p>win32com 包可能在传输数据时与 comtypes 不太一致，如 pyautocad 采用的 <code>aDouble</code> 、 <code>aInt</code> 、 <code>aShort</code> 方法在 comtypes 接口时可传输，但在 win32com 接口时会产生错误。该方法实际效果如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array.array(<span class="string">"d"</span>, list)</span><br></pre></td></tr></table></figure>
-<h3 id="两个接口各自的便利"><a href="#两个接口各自的便利" class="headerlink" title="两个接口各自的便利"></a>两个接口各自的便利</h3><p>comtypes 具有 <code>comtypes.client.GetBestInterface(obj)</code> 方法，对应 pyautocad 中 api.py 内的 <code>best_interface(self, obj)</code> 方法。可快速检索接口。</p>
+<h3><a href="#liang-ge-jie-kou-ge-zi-de-bian-li" class="header-anchor"> <i class="fa fa-file-text-o"></i> </a><span id="liang-ge-jie-kou-ge-zi-de-bian-li">两个接口各自的便利</span></h3><p>comtypes 具有 <code>comtypes.client.GetBestInterface(obj)</code> 方法，对应 pyautocad 中 api.py 内的 <code>best_interface(self, obj)</code> 方法。可快速检索接口。</p>
 <p>win32com 可采用 <code>help()</code> 查看参数需求。</p>
 <p>目前测试中两者不易互相取代。</p>
 <blockquote>
@@ -656,7 +656,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CAD-开发工具"><span class="nav-number">1.</span> <span class="nav-text">CAD 开发工具</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CAD-整理"><span class="nav-number">2.</span> <span class="nav-text">CAD 整理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CAD-软件现状及接口调整"><span class="nav-number">2.1.</span> <span class="nav-text">CAD 软件现状及接口调整</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CAD-开发语言分析"><span class="nav-number">2.2.</span> <span class="nav-text">CAD 开发语言分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CAD-开发中踩过的坑"><span class="nav-number">3.</span> <span class="nav-text">CAD 开发中踩过的坑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pyautocad-包-无法获取-Attributes"><span class="nav-number">3.1.</span> <span class="nav-text">pyautocad 包 无法获取 Attributes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#comtypes-pyautocad-和-win32com-接口需同时使用"><span class="nav-number">3.2.</span> <span class="nav-text">comtypes (pyautocad) 和 win32com 接口需同时使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据传输的便捷"><span class="nav-number">3.2.1.</span> <span class="nav-text">数据传输的便捷</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#两个接口各自的便利"><span class="nav-number">3.2.2.</span> <span class="nav-text">两个接口各自的便利</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">  CAD 开发工具</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">  CAD 整理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.1.</span> <span class="nav-text">  CAD 软件现状及接口调整</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.</span> <span class="nav-text">  CAD 开发语言分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">  CAD 开发中踩过的坑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.1.</span> <span class="nav-text">  pyautocad 包 无法获取 Attributes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.2.</span> <span class="nav-text">  comtypes (pyautocad) 和 win32com 接口需同时使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.2.1.</span> <span class="nav-text">  数据传输的便捷</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.2.2.</span> <span class="nav-text">  两个接口各自的便利</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -690,7 +690,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">3.3k words</span>
+    <span title="Site words total count">6.7k words</span>
   
 </div>
 

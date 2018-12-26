@@ -121,3 +121,14 @@ sequence:
   options: 
     theme: 
     css_class:
+
+# toc
+toc:
+  maxdepth: 3
+  class: toc
+  slugify: transliteration
+  decodeEntities: false
+  anchor:
+    position: before
+    symbol: ' <i class="fa fa-file-text-o"></i> '
+    style: header-anchor
