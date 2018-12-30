@@ -132,3 +132,8 @@ toc:
     position: before
     symbol: ' <i class="fa fa-file-text-o"></i> '
     style: header-anchor
+
+# Security
+##
+encrypt:
+    enable: true

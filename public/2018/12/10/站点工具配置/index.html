@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="echarts,search,备份,">
+  <meta name="keywords" content="备份,echarts,search,">
 
 
 
@@ -91,7 +91,7 @@
 
 
 <meta name="description" content="hexo-tag-echartsX 图表加载 Rewritefrom hexo-tag-echarts3  站内搜索 Loadfrom hexo-generator-searchdb  流程图支持 Loadfrom hexo-filter-flowchart  序列图支持 Loadfrom hexo-filter-sequence">
-<meta name="keywords" content="echarts,search,备份">
+<meta name="keywords" content="备份,echarts,search">
 <meta property="og:type" content="article">
 <meta property="og:title" content="站点工具配置">
 <meta property="og:url" content="https://blog.nillionaire.net/2018/12/10/站点工具配置/index.html">
@@ -132,6 +132,7 @@
 
 
   <link rel="canonical" href="https://blog.nillionaire.net/2018/12/10/站点工具配置/">
+
 
 
 
@@ -447,11 +448,11 @@
 <h1><a href="#hexo-tag-echartsx" class="header-anchor"> <i class="fa fa-file-text-o"></i> </a><span id="hexo-tag-echartsx">hexo-tag-echartsX</span></h1><h2><a href="#node-modules-hexo-tag-echarts-index-js" class="header-anchor"> <i class="fa fa-file-text-o"></i> </a><span id="node-modules-hexo-tag-echarts-index-js">\node_modules\hexo-tag-echarts\index.js</span></h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</span><br><span class="line"><span class="keyword">var</span> _ = <span class="built_in">require</span>(<span class="string">'./lib/underscore-min'</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">var</span>  path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">var</span>  _ = <span class="built_in">require</span>(<span class="string">'./lib/underscore-min'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> filePath = path.join(__dirname, <span class="string">'template.html'</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">echartsLoad</span>(<span class="params">args, content</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> template = fs.readFileSync(filePath).toString();</span><br><span class="line">    <span class="keyword">var</span> options = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (content.length) &#123;</span><br><span class="line">        <span class="keyword">var</span> options = content;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> ver = <span class="string">'https://cdn.bootcss.com/echarts/'</span> + args[<span class="number">2</span>] + <span class="string">'/echarts.min.js'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> _.template(template)(&#123;</span><br><span class="line">        id: <span class="string">'echarts'</span> + ((<span class="built_in">Math</span>.random() * <span class="number">9999</span>) | <span class="number">0</span>),</span><br><span class="line">        option: options,</span><br><span class="line">        height: args[<span class="number">0</span>] || <span class="number">400</span>,</span><br><span class="line">        width: args[<span class="number">1</span>] || <span class="string">'95%'</span>,</span><br><span class="line">        version: ver,</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">hexo.extend.tag.register(<span class="string">'echarts'</span>, echartsLoad, &#123;</span><br><span class="line">    <span class="keyword">async</span>: <span class="literal">true</span>,</span><br><span class="line">    ends: <span class="literal">true</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h2><a href="#node-modules-hexo-tag-echarts-template-html" class="header-anchor"> <i class="fa fa-file-text-o"></i> </a><span id="node-modules-hexo-tag-echarts-template-html">\node_modules\hexo-tag-echarts\template.html</span></h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"&lt;%- id %&gt;"</span> <span class="attr">style</span>=<span class="string">"width: &lt;%- width %&gt;;height: &lt;%- height %&gt;px;margin: 0 auto"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"&lt;%- version %&gt;"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="comment">// 基于准备好的dom，初始化echarts实例</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> myChart = echarts.init(<span class="built_in">document</span>.getElementById(<span class="string">'&lt;%- id %&gt;'</span>));</span></span><br><span class="line"><span class="javascript">        <span class="comment">// 指定图表的配置项和数据</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> option = <span class="xml"><span class="tag">&lt;<span class="name">%=</span> <span class="attr">option</span> %&gt;</span></span></span></span><br><span class="line"><span class="javascript">        <span class="comment">// 使用刚指定的配置项和数据显示图表。</span></span></span><br><span class="line"><span class="undefined">        myChart.setOption(option);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2><a href="#echarts-shi-li" class="header-anchor"> <i class="fa fa-file-text-o"></i> </a><span id="echarts-shi-li">echarts 示例</span></h2><figure class="highlight markdown"><figcaption><span>.md</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% echarts 400 '95%' '4.2.0-rc.2' %&#125;</span><br><span class="line">... echart 对应 option ... 指定图表的配置项和数据</span><br><span class="line">&#123;% endecharts %&#125;</span><br></pre></td></tr></table></figure>
-<h2><a href="#echarts-shi-li-xiao-guo" class="header-anchor"> <i class="fa fa-file-text-o"></i> </a><span id="echarts-shi-li-xiao-guo">echarts 示例效果</span></h2><div id="echarts4980" style="width: 85%;height: 400px;margin: 0 auto"></div>
+<h2><a href="#echarts-shi-li-xiao-guo" class="header-anchor"> <i class="fa fa-file-text-o"></i> </a><span id="echarts-shi-li-xiao-guo">echarts 示例效果</span></h2><div id="echarts9700" style="width: 85%;height: 400px;margin: 0 auto"></div>
 <script src="https://cdn.bootcss.com/echarts/4.2.0-rc.2/echarts.min.js"></script>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echarts4980'));
+        var myChart = echarts.init(document.getElementById('echarts9700'));
         // 指定图表的配置项和数据
         var option = {
     tooltip : {
@@ -555,7 +556,7 @@ st->op1(right)->cond
 cond(yes, right)->c2
 cond(no)->sub1(left)->op1
 c2(yes)->io->e
-c2(no)->op2->e</textarea><textarea id="flowchart-0-options" style="display: none">{"theme":"simple","scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script></p>
+c2(no)->op2->e</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12,"theme":"simple"}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script></p>
 
       
     </div>
@@ -573,11 +574,11 @@ c2(no)->op2->e</textarea><textarea id="flowchart-0-options" style="display: none
       
         <div class="post-tags">
           
+            <a href="/tags/备份/" rel="tag"><i class="fa fa-tag"></i> 备份</a>
+          
             <a href="/tags/echarts/" rel="tag"><i class="fa fa-tag"></i> echarts</a>
           
             <a href="/tags/search/" rel="tag"><i class="fa fa-tag"></i> search</a>
-          
-            <a href="/tags/备份/" rel="tag"><i class="fa fa-tag"></i> 备份</a>
           
         </div>
       
@@ -590,18 +591,14 @@ c2(no)->op2->e</textarea><textarea id="flowchart-0-options" style="display: none
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/10/站点CSS配置/" rel="next" title="站点CSS配置">
-                <i class="fa fa-chevron-left"></i> 站点CSS配置
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/12/14/开始/" rel="prev" title="开始">
-                开始 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/12/10/站点CSS配置/" rel="prev" title="站点CSS配置">
+                站点CSS配置 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -686,7 +683,7 @@ c2(no)->op2->e</textarea><textarea id="flowchart-0-options" style="display: none
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -697,7 +694,7 @@ c2(no)->op2->e</textarea><textarea id="flowchart-0-options" style="display: none
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -708,7 +705,7 @@ c2(no)->op2->e</textarea><textarea id="flowchart-0-options" style="display: none
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -785,7 +782,7 @@ c2(no)->op2->e</textarea><textarea id="flowchart-0-options" style="display: none
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">6.7k words</span>
+    <span title="Site words total count">2.2k words</span>
   
 </div>
 
